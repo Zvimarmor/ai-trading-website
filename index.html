@@ -6,7 +6,7 @@
   <title>TradingMonkey AI Ltd</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="lock-scroll">
 
 <!-- Navbar hidden on landing screen -->
 <header id="navbar" class="navbar hidden">
@@ -21,14 +21,14 @@
   </nav>
 </header>
 
-<!-- Minimal Landing Screen -->
+<!-- Landing Screen -->
 <section class="hero" id="landing-screen">
   <h2>Welcome to <span>TradingMonkey AI</span></h2>
   <p class="hero-intro">Smarter trading, powered by AI and real data.</p>
   <button onclick="scrollToContent()">Continue</button>
 </section>
 
-<!-- Full Home Screen -->
+<!-- Main Content -->
 <main id="main-content" class="hidden">
   <section class="homepage-intro">
     <h2>About TradingMonkey AI</h2>
@@ -61,8 +61,9 @@ function scrollToContent() {
     setTimeout(() => {
         document.getElementById('main-content').classList.remove('hidden');
         document.getElementById('navbar').classList.remove('hidden');
+        document.body.classList.remove('lock-scroll');
 
-        // animate cards after content loads
+        // Animate cards
         document.querySelectorAll('.appear-from-bottom').forEach((el, index) => {
             setTimeout(() => {
                 el.classList.add('show');
