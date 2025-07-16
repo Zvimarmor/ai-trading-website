@@ -3,24 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TradingMonkey AI - Smarter Trading with AI</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>TradingMonkey AI Ltd</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gradient-to-r from-blue-700 to-purple-700 text-white font-sans">
+<body>
 
-  <section class="flex flex-col items-center justify-center min-h-screen text-center px-4">
-    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">AI-Driven Trading Algorithms</h1>
-    <p class="text-base sm:text-lg md:text-xl mb-6 max-w-xl leading-relaxed">
-      Smarter market decisions through cutting-edge AI technology, predictive analytics, and real-time strategy optimization.
+<!-- Navbar hidden on landing screen -->
+<header id="navbar" class="navbar hidden">
+  <h1>TradingMonkey AI Ltd</h1>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Minimal Landing Screen -->
+<section class="hero" id="landing-screen">
+  <h2>Welcome to <span>TradingMonkey AI</span></h2>
+  <p class="hero-intro">Smarter trading, powered by AI and real data.</p>
+  <button onclick="scrollToContent()">Continue</button>
+</section>
+
+<!-- Full Home Screen -->
+<main id="main-content" class="hidden">
+  <section class="homepage-intro">
+    <h2>About TradingMonkey AI</h2>
+    <p>
+      At TradingMonkey AI, we are building a next-generation day-trading system using advanced AI and proven statistical models. 
+      Our mission is to create transparent, reliable, and profitable automated trading strategies with real-world performance validation.
     </p>
-    <a href="mailto:contact@tradingmonkeyai.com" class="bg-white text-blue-700 font-semibold py-3 px-8 rounded-full hover:bg-gray-200 transition">
-      Contact Us
-    </a>
+    <img src="images/intro.png" alt="Intro TradingMonkey AI" class="intro-image">
   </section>
 
-  <footer class="text-center text-sm text-gray-300 py-6">
-    © 2025 TradingMonkeyAI. All rights reserved.
-  </footer>
+  <section class="cards homepage-cards">
+    <a class="card appear-from-bottom" href="about.html">
+      <h3>About Us</h3>
+      <p>Learn about our AI product and unique approach to trading.</p>
+    </a>
+    <a class="card appear-from-bottom" href="team.html">
+      <h3>Our Team</h3>
+      <p>Get to know the founders and developers behind the project.</p>
+    </a>
+    <a class="card appear-from-bottom" href="contact.html">
+      <h3>Contact</h3>
+      <p>Reach out for partnerships, collaborations, or questions.</p>
+    </a>
+  </section>
+</main>
+
+<script>
+function scrollToContent() {
+    document.querySelector('#landing-screen').classList.add('slide-up');
+    setTimeout(() => {
+        document.getElementById('main-content').classList.remove('hidden');
+        document.getElementById('navbar').classList.remove('hidden');
+
+        // animate cards after content loads
+        document.querySelectorAll('.appear-from-bottom').forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.add('show');
+            }, index * 200);
+        });
+    }, 800);
+}
+</script>
 
 </body>
 </html>
