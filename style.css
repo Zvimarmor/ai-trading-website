@@ -105,16 +105,22 @@
     transform: translateY(0);
   }
 
+  #landing-screen.hidden,
+#landing-screen[style*="display: none"] {
+  display: none !important;
+}
+
   #main-content {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: center;  /* vertical centering */
+    align-items: center;      /* horizontal centering */
     padding: 60px 20px;
     gap: 40px;
     text-align: center;
-}
+  }
+  
 
   
   .home-intro {
@@ -161,7 +167,9 @@ button:hover,
   /* HERO SLIDE ANIMATION */
   .slide-up {
     transform: translateY(-100vh);
+    pointer-events: none;
   }
+  
   
   .hidden {
     display: none;

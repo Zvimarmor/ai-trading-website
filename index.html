@@ -56,22 +56,22 @@
 </main>
 
 <script>
-function scrollToContent() {
-    document.querySelector('#landing-screen').classList.add('slide-up');
-    setTimeout(() => {
-        document.getElementById('main-content').classList.remove('hidden');
+    function scrollToContent() {
+      document.querySelector('#landing-screen').classList.add('slide-up');
+      setTimeout(() => {
         document.getElementById('navbar').classList.remove('hidden');
+        document.getElementById('main-content').classList.remove('hidden');
         document.body.classList.remove('lock-scroll');
-
-        // Animate cards
-        document.querySelectorAll('.appear-from-bottom').forEach((el, index) => {
-            setTimeout(() => {
-                el.classList.add('show');
-            }, index * 200);
+        document.getElementById('landing-screen').style.display = 'none';
+    
+        document.querySelectorAll('.appear-from-bottom').forEach((el, i) => {
+          setTimeout(() => el.classList.add('show'), i * 200);
         });
-    }, 800);
-}
-</script>
+      }, 800);
+    }
+    </script>
+    
+
 
 </body>
 </html>
