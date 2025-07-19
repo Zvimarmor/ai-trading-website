@@ -23,14 +23,25 @@
   <h2>Contact Us</h2>
   <p>We’re always happy to connect! You can reach us directly at <a href="mailto:info@tradingmonkeyai.com" class="email-link">info@tradingmonkeyai.com</a>, or follow Roi Halamish on <a href="https://www.linkedin.com/in/" target="_blank" class="linkedin-link">LinkedIn</a>.</p>
   <p>Whether you’re an investor, partner, or just curious about AI-powered trading — feel free to reach out!</p>
-
-  <form class="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-    <button type="submit">Send</button>
-  </form>
 </main>
+
+<form action="https://formsubmit.co/info@tradingmonkeyai.com" method="POST" target="dummyframe" class="contact-form">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://tradingmonkeyai.com/contact.html#thankyou">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+  <button type="submit">Send</button>
+</form>
+<iframe name="dummyframe" style="display:none;"></iframe>
+<p id="success-message" style="display:none; color:green; margin-top:20px;"><strong>Your message was sent successfully!</strong></p>
+
+<script>
+document.querySelector('.contact-form').addEventListener('submit', function() {
+  document.getElementById('success-message').style.display = 'block';
+});
+</script>
+
 
 </body>
 </html>

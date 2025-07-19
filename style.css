@@ -303,6 +303,17 @@ button:hover,
     border: 2px solid var(--natural);
     font-size: 1rem;
   }
+
+  #success-message {
+    color: #28a745; /* ירוק יפה בסגנון Bootstrap */
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
   
 
   .about-container {
